@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transcription Automatique</title>
+    <style>
+        textarea {
+            width: 100%;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Transcription Automatique</h1>
+    <label for="inputText">Entrer le texte en Esperanto :</label>
+    <textarea id="inputText"></textarea>
+
+    <label for="languageSelect">Choisir la langue de transcription :</label>
+    <select id="languageSelect">
+        <option value="elpraolo">Elpraolo par IFA</option>
+        <option value="araba">Araba</option>
+        <option value="armena">Armena</option>
+        <option value="cirila">Cirila</option>
+        <option value="hebrea">Hebrea</option>
+        <option value="korea">Korea</option>
+        <option value="grekaModerna">Greka moderna</option>
+        <option value="grekaAntika">Greka antika</option>
+        <option value="birma">Birma</option>
+        <!-- Ajoutez d'autres options pour les autres langues -->
+    </select>
+
+    <button onclick="transcrire()">Transcrire</button>
+
+    <h2>Résultat :</h2>
+    <div id="result"></div>
+
+    <script>
+        function transcrire() {
+            // Récupérer le texte d'entrée
+            var texteEntree = document.getElementById("inputText").value;
+
+            // Récupérer la langue sélectionnée
+            var langueSelectionnee = document.getElementById("languageSelect").value;
+
+            // Effectuer le remplacement des lettres en fonction de la langue
+            var texteSortie = transcrireEnLangue(texteEntree, langueSelectionnee);
+
+            // Afficher le résultat
+            document.getElementById("result").innerText = texteSortie;
+        }
+
+        function transcrireEnLangue(texte, langue) {
+            // Sélectionner la fonction de transcription en fonction de la langue
+            var resultat = '';
+
+            switch (langue) {
+                case 'elpraolo':
+                    resultat = transcrireElpraoloPerIFA(texte);
+                    break;
+                case 'araba':
+                    resultat = transcrireArabaLitero(texte);
+                    break;
+                case 'armena':
+                    resultat = transcrireArmenaLitero(texte);
+                    break;
+				case 'cirila':
+                    resultat = transcrireCirilaLitero(texte);
+                    break;
+				case 'hebrea':
+                    resultat = transcrireHebreaLitero(texte);
+                    break;
+				case 'korea':
+                    resultat = transcrireKoreaLitero(texte);
+                    break;
+				case 'grekaModerna':
+                    resultat = transcrireGrekaLiteroModerna(texte);
+                    break;
+				case 'grekaAntika':
+                    resultat = transcrireGrekaLiteroAntikva(texte);
+                    break;
+				case 'birma':
+                    resultat = transcrireBirman(texte);
+                    break;
+                // Ajoutez d'autres cas pour les autres langues
+                default:
+                    resultat = texte;  // Par défaut, ne pas effectuer de transcription
+                    break;
+            }
+
+            return resultat;
+        }
+
+        // Fonctions de transcription pour chaque langue
+        function transcrireElpraoloPerIFA(texte) {
+    // Remplacez chaque lettre selon la correspondance spécifiée dans les données
+    var resultat = texte
+        .replace(/A/gi, "a")
+        .replace(/B/gi, "b")
+        .replace(/C/gi, "t͡s")
+        .replace(/Ĉ/gi, "t͡ʃ")
+        .replace(/D/gi, "d")
+        .replace(/E/gi, "e")
+        .replace(/F/gi, "f")
+        .replace(/G/gi, "ɡ")
+        .replace(/Ĝ/gi, "d͡ʒ")
+        .replace(/H/gi, "h")
+        .replace(/Ĥ/gi, "x")
+        .replace(/I/gi, "i")
+        .replace(/J/gi, "j")
+        .replace(/Ĵ/gi, "ʒ")
+        .replace(/K/gi, "k")
+        .replace(/L/gi, "l")
+        .replace(/M/gi, "m")
+        .replace(/N/gi, "n")
+        .replace(/O/gi, "o")
+        .replace(/P/gi, "p")
+        .replace(/R/gi, "r")
+        .replace(/S/gi, "s")
+        .replace(/Ŝ/gi, "ʃ")
+        .replace(/T/gi, "t")
+        .replace(/U/gi, "u")
+        .replace(/Ŭ/gi, "w")
+        .replace(/V/gi, "v")
+        .replace(/Z/gi, "z");
+
+    return resultat;
+}
+
+
+function transcrireArabaLitero(texte) {
+    var resultat = texte
+        .replace(/A/gi, "ا")
+        .replace(/B/gi, "ب")
+        .replace(/C/gi, "ث")
+        .replace(/Ĉ/gi, "چ")
+        .replace(/D/gi, "د")
+        .replace(/E/gi, "اَ")
+        .replace(/F/gi, "ف")
+        .replace(/G/gi, "گ")
+        .replace(/Ĝ/gi, "ج")
+        .replace(/H/gi, "ه")
+        .replace(/Ĥ/gi, "خ")
+        .replace(/I/gi, "اِ")
+        .replace(/J/gi, "ی")
+        .replace(/Ĵ/gi, "ژ")
+        .replace(/K/gi, "ك")
+        .replace(/L/gi, "ل")
+        .replace(/M/gi, "م")
+        .replace(/N/gi, "ن")
+        .replace(/O/gi, "اُ")
+        .replace(/P/gi, "پ")
+        .replace(/R/gi, "ر")
+        .replace(/S/gi, "س")
+        .replace(/Ŝ/gi, "ش")
+        .replace(/T/gi, "ت")
+        .replace(/U/gi, "اْ")
+        .replace(/Ŭ/gi, "و")
+        .replace(/V/gi, "ڤ")
+        .replace(/Z/gi, "ز");
+
+    return resultat;
+}
+function transcrireArmenaLitero(texte) {
+    var resultat = texte
+        .replace(/A/g, "Ա")
+        .replace(/B/g, "Բ")
+        .replace(/C/g, "Ծ")
+        .replace(/Ĉ/g, "Ճ")
+        .replace(/D/g, "Դ")
+        .replace(/E/g, "է")
+        .replace(/F/g, "Ֆ")
+        .replace(/G/g, "Գ")
+        .replace(/Ĝ/g, "Ղ")
+        .replace(/H/g, "Հ")
+        .replace(/Ĥ/g, "Խ")
+        .replace(/I/g, "Ի")
+        .replace(/J/g, "Յ")
+        .replace(/Ĵ/g, "Ջ")
+        .replace(/K/g, "Կ")
+        .replace(/L/g, "Լ")
+        .replace(/M/g, "Մ")
+        .replace(/N/g, "Ն")
+        .replace(/O/g, "Ո")
+        .replace(/P/g, "Պ")
+        .replace(/R/g, "Ր")
+        .replace(/S/g, "Ս")
+        .replace(/Ŝ/g, "Շ")
+        .replace(/T/g, "Տ")
+        .replace(/U/g, "Ւ")
+        .replace(/Ŭ/g, "Ւ")
+        .replace(/V/g, "Վ")
+        .replace(/Z/g, "Զ")
+		.replace(/a/g, "ա")
+.replace(/b/g, "բ")
+.replace(/c/g, "ց")
+.replace(/ĉ/g, "չ")
+.replace(/d/g, "դ")
+.replace(/e/g, "ե")
+.replace(/f/g, "ֆ")
+.replace(/g/g, "գ")
+.replace(/ĝ/g, "ղ")
+.replace(/h/g, "հ")
+.replace(/ĥ/g, "խ")
+.replace(/i/g, "ի")
+.replace(/j/g, "յ")
+.replace(/ĵ/g, "ջ")
+.replace(/k/g, "կ")
+.replace(/l/g, "լ")
+.replace(/m/g, "մ")
+.replace(/n/g, "ն")
+.replace(/o/g, "ո")
+.replace(/p/g, "պ")
+.replace(/r/g, "ր")
+.replace(/s/g, "ս")
+.replace(/ŝ/g, "շ")
+.replace(/t/g, "տ")
+.replace(/u/g, "ու")
+.replace(/ŭ/g, "վ")
+.replace(/v/g, "վ")
+.replace(/z/g, "զ");
+
+
+    return resultat;
+}
+function transcrireCirilaLitero(texte) {
+    var resultat = texte
+        .replace(/A/g, "А")
+        .replace(/B/g, "Б")
+        .replace(/C/g, "Ц")
+        .replace(/Ĉ/g, "Ч")
+        .replace(/D/g, "Д")
+        .replace(/E/g, "Е")
+        .replace(/F/g, "Ф")
+        .replace(/G/g, "Г")
+        .replace(/Ĝ/g, "Џ")
+        .replace(/H/g, "Һ")
+        .replace(/Ĥ/g, "Х")
+        .replace(/I/g, "И")
+        .replace(/J/g, "Й")
+        .replace(/Ĵ/g, "Ж")
+        .replace(/K/g, "К")
+        .replace(/L/g, "Л")
+        .replace(/M/g, "М")
+        .replace(/N/g, "Н")
+        .replace(/O/g, "О")
+        .replace(/P/g, "П")
+        .replace(/R/g, "Р")
+        .replace(/S/g, "С")
+        .replace(/Ŝ/g, "Ш")
+        .replace(/T/g, "Т")
+        .replace(/U/g, "У")
+        .replace(/Ŭ/g, "Ў")
+        .replace(/V/g, "В")
+        .replace(/Z/g, "З")
+		.replace(/а/g, "А")
+.replace(/a/g, "а")
+.replace(/b/g, "б")
+.replace(/c/g, "ц")
+.replace(/ĉ/g, "ч")
+.replace(/d/g, "д")
+.replace(/e/g, "э")
+.replace(/f/g, "ф")
+.replace(/g/g, "г")
+.replace(/ĝ/g, "ґ")
+.replace(/h/g, "х")
+.replace(/ĥ/g, "ћ")
+.replace(/i/g, "и")
+.replace(/j/g, "ј")
+.replace(/ĵ/g, "ж")
+.replace(/k/g, "к")
+.replace(/l/g, "л")
+.replace(/m/g, "м")
+.replace(/n/g, "н")
+.replace(/o/g, "о")
+.replace(/p/g, "п")
+.replace(/r/g, "р")
+.replace(/s/g, "с")
+.replace(/ŝ/g, "ш")
+.replace(/t/g, "т")
+.replace(/u/g, "у")
+.replace(/ŭ/g, "ў")
+.replace(/v/g, "в")
+.replace(/z/g, "з");
+
+    return resultat;
+}
+function transcrireHebreaLitero(texte) {
+    var resultat = texte
+        .replace(/A/gi, "אַ")
+        .replace(/B/gi, "ּב")
+        .replace(/C/gi, "צ")
+        .replace(/Ĉ/gi, "צ'")
+        .replace(/D/gi, "ד")
+        .replace(/E/gi, "אֶ")
+        .replace(/F/gi, "פ")
+        .replace(/G/gi, "ג")
+        .replace(/Ĝ/gi, "גּ")
+        .replace(/H/gi, "ה")
+        .replace(/Ĥ/gi, "ח")
+        .replace(/I/gi, "אִ")
+        .replace(/J/gi, "י")
+        .replace(/Ĵ/gi, "ז'")
+        .replace(/K/gi, "ק")
+        .replace(/L/gi, "ל")
+        .replace(/M/gi, "מ")
+        .replace(/N/gi, "נ")
+        .replace(/O/gi, "אוֹ")
+        .replace(/P/gi, "פּ")
+        .replace(/R/gi, "ר")
+        .replace(/S/gi, "ס")
+        .replace(/Ŝ/gi, "ש")
+        .replace(/T/gi, "ת")
+        .replace(/U/gi, "אֻ")
+        .replace(/Ŭ/gi, "וו")
+        .replace(/V/gi, "ו")
+        .replace(/Z/gi, "ז");
+
+    return resultat;
+}
+function transcrireKoreaLitero(texte) {
+    var resultat = texte
+        .replace(/A/gi, "ㅏ")
+        .replace(/B/gi, "ㅂ")
+        .replace(/C/gi, "ㅉ")
+        .replace(/Ĉ/gi, "ㅊ")
+        .replace(/D/gi, "ㄷ")
+        .replace(/E/gi, "ㅔ")
+        .replace(/F/gi, "ㅍ")
+        .replace(/G/gi, "ㄱ")
+        .replace(/Ĝ/gi, "ㄲ")
+        .replace(/H/gi, "ㅎ")
+        .replace(/Ĥ/gi, "ㅎ")
+        .replace(/I/gi, "ㅣ")
+        .replace(/J/gi, "ㅑ")
+        .replace(/Ĵ/gi, "ㅖ")
+        .replace(/K/gi, "ㅋ")
+        .replace(/L/gi, "ㄹ")
+        .replace(/M/gi, "ㅁ")
+        .replace(/N/gi, "ㄴ")
+        .replace(/O/gi, "ㅗ")
+        .replace(/P/gi, "ㅃ")
+        .replace(/R/gi, "ㄹ")
+        .replace(/S/gi, "ㅅ")
+        .replace(/Ŝ/gi, "ㅆ")
+        .replace(/T/gi, "ㅌ")
+        .replace(/U/gi, "ㅜ")
+        .replace(/Ŭ/gi, "ㅜ")
+        .replace(/V/gi, "ㅸ")
+        .replace(/Z/gi, "ㅿ");
+
+    return resultat;
+}
+function transcrireGrekaLiteroModerna(texte) {
+    var resultat = texte
+        .replace(/A/g, "Α")
+        .replace(/B/g, "ΜΠ")
+        .replace(/C/g, "ΤΣ")
+        .replace(/Ĉ/g, "ΤΣ")
+        .replace(/D/g, "ΝΤ")
+        .replace(/E/g, "Ε")
+        .replace(/F/g, "Φ")
+        .replace(/G/g, "ΓΚ")
+        .replace(/Ĝ/g, "ΤΖ")
+        .replace(/H/g, "Χ")
+        .replace(/Ĥ/g, "Χ")
+        .replace(/I/g, "Ι")
+        .replace(/J/g, "ΓΙ")
+        .replace(/Ĵ/g, "Ζ")
+        .replace(/K/g, "Κ")
+        .replace(/L/g, "Λ")
+        .replace(/M/g, "Μ")
+        .replace(/N/g, "Ν")
+        .replace(/O/g, "Ο")
+        .replace(/P/g, "Π")
+        .replace(/R/g, "Ρ")
+        .replace(/S/g, "Σ")
+        .replace(/Ŝ/g, "Σ")
+        .replace(/T/g, "Τ")
+        .replace(/U/g, "ΟΥ")
+        .replace(/Ŭ/g, "ΟΥ")
+        .replace(/V/g, "Β")
+        .replace(/Z/g, "Ζ")
+		.replace(/a/g, "α")
+.replace(/b/g, "β")
+.replace(/c/g, "τσ")
+.replace(/ĉ/g, "τσ'")
+.replace(/d/g, "ντ")
+.replace(/e/g, "ε")
+.replace(/f/g, "φ")
+.replace(/g/g, "γκ")
+.replace(/ĝ/g, "τζ")
+.replace(/h/g, "χ")
+.replace(/ĥ/g, "χ'")
+.replace(/i/g, "ι")
+.replace(/j/g, "γι")
+.replace(/ĵ/g, "ζ")
+.replace(/k/g, "κ")
+.replace(/l/g, "λ")
+.replace(/m/g, "μ")
+.replace(/n/g, "ν")
+.replace(/o/g, "ο")
+.replace(/p/g, "π")
+.replace(/r/g, "ρ")
+.replace(/s/g, "σ")
+.replace(/ŝ/g, "σ'")
+.replace(/t/g, "τ")
+.replace(/u/g, "ου")
+.replace(/ŭ/g, "ου'")
+.replace(/v/g, "β")
+.replace(/z/g, "ζ");
+
+
+    return resultat;
+}
+function transcrireGrekaLiteroAntikva(texte) {
+    var resultat = texte
+        .replace(/A/g, "Α")
+        .replace(/B/g, "Β")
+        .replace(/C/g, "Σ")
+        .replace(/Ĉ/g, "Σ")
+        .replace(/D/g, "Δ")
+        .replace(/E/g, "Ε")
+        .replace(/F/g, "Φ")
+        .replace(/G/g, "Γ")
+        .replace(/Ĝ/g, "Ζ")
+        .replace(/H/g, "̔Ͱͱ")
+        .replace(/Ĥ/g, "Χ")
+        .replace(/I/g, "Ι")
+        .replace(/J/g, "Ι")
+        .replace(/Ĵ/g, "Σ")
+        .replace(/K/g, "Κ")
+        .replace(/L/g, "Λ")
+        .replace(/M/g, "Μ")
+        .replace(/N/g, "Ν")
+        .replace(/O/g, "Ο")
+        .replace(/P/g, "Π")
+        .replace(/R/g, "Ρ")
+        .replace(/S/g, "Σ")
+        .replace(/Ŝ/g, "Σ")
+        .replace(/T/g, "Τ")
+        .replace(/U/g, "Υ")
+        .replace(/Ŭ/g, "Υ")
+        .replace(/V/g, "Β")
+        .replace(/Z/g, "Σ")
+		.replace(/a/g, "α")
+.replace(/b/g, "β")
+.replace(/c/g, "τσ")
+.replace(/ĉ/g, "τσ'")
+.replace(/d/g, "ντ")
+.replace(/e/g, "ε")
+.replace(/f/g, "φ")
+.replace(/g/g, "γκ")
+.replace(/ĝ/g, "τζ")
+.replace(/h/g, "χ")
+.replace(/ĥ/g, "χ'")
+.replace(/i/g, "ι")
+.replace(/j/g, "γι")
+.replace(/ĵ/g, "ζ")
+.replace(/k/g, "κ")
+.replace(/l/g, "λ")
+.replace(/m/g, "μ")
+.replace(/n/g, "ν")
+.replace(/o/g, "ο")
+.replace(/p/g, "π")
+.replace(/r/g, "ρ")
+.replace(/s/g, "σ")
+.replace(/ŝ/g, "σ'")
+.replace(/t/g, "τ")
+.replace(/u/g, "ου")
+.replace(/ŭ/g, "ου'")
+.replace(/v/g, "β")
+.replace(/z/g, "ζ");
+
+
+    return resultat;
+}
+function transcrireBirman(texte) {
+    var resultat = texte
+        .replace(/a/gi, "အ")
+        .replace(/b/gi, "ဗ")
+        .replace(/c/gi, "တစ")
+        .replace(/ĉ/gi, "ပ်")
+        .replace(/d/gi, "ဒ")
+        .replace(/e/gi, "အေ")
+        .replace(/f/gi, "ဖ်")
+        .replace(/g/gi, "ဂ")
+        .replace(/ĝ/gi, "ဂျ")
+        .replace(/h/gi, "ဟ")
+        .replace(/ĥ/gi, "အက်")
+        .replace(/i/gi, "အိ")
+        .replace(/j/gi, "ယ")
+        .replace(/ĵ/gi, "အျ")
+        .replace(/k/gi, "က")
+        .replace(/l/gi, "လ")
+        .replace(/m/gi, "မ")
+        .replace(/n/gi, "န")
+        .replace(/o/gi, "ဩ")
+        .replace(/p/gi, "ပ")
+        .replace(/r/gi, "ရ")
+        .replace(/s/gi, "စ")
+        .replace(/ŝ/gi, "ရှ")
+        .replace(/t/gi, "တ")
+        .replace(/u/gi, "အူ")
+        .replace(/ŭ/gi, "ဝ")
+        .replace(/v/gi, "ဘ")
+        .replace(/z/gi, "ဇ");
+
+    return resultat;
+}
+
+
+
+        // Ajoutez d'autres fonctions de transcription pour les autres langues
+    </script>
+</body>
+</html>
