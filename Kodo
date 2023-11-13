@@ -64,22 +64,22 @@
                 case 'armena':
                     resultat = transcrireArmenaLitero(texte);
                     break;
-				case 'cirila':
+		case 'cirila':
                     resultat = transcrireCirilaLitero(texte);
                     break;
-				case 'hebrea':
+		case 'hebrea':
                     resultat = transcrireHebreaLitero(texte);
                     break;
-				case 'korea':
+		case 'korea':
                     resultat = transcrireKoreaLitero(texte);
                     break;
-				case 'grekaModerna':
+		case 'grekaModerna':
                     resultat = transcrireGrekaLiteroModerna(texte);
                     break;
-				case 'grekaAntika':
+		case 'grekaAntika':
                     resultat = transcrireGrekaLiteroAntikva(texte);
                     break;
-				case 'birma':
+		case 'birma':
                     resultat = transcrireBirman(texte);
                     break;
                 // Ajoutez d'autres cas pour les autres langues
@@ -123,10 +123,8 @@
         .replace(/Ŭ/gi, "w")
         .replace(/V/gi, "v")
         .replace(/Z/gi, "z");
-
     return resultat;
 }
-
 
 function transcrireArabaLitero(texte) {
     var resultat = texte
@@ -158,9 +156,9 @@ function transcrireArabaLitero(texte) {
         .replace(/Ŭ/gi, "و")
         .replace(/V/gi, "ڤ")
         .replace(/Z/gi, "ز");
-
     return resultat;
 }
+
 function transcrireArmenaLitero(texte) {
     var resultat = texte
         .replace(/A/g, "Ա")
@@ -191,38 +189,37 @@ function transcrireArmenaLitero(texte) {
         .replace(/Ŭ/g, "Ւ")
         .replace(/V/g, "Վ")
         .replace(/Z/g, "Զ")
-		.replace(/a/g, "ա")
-.replace(/b/g, "բ")
-.replace(/c/g, "ց")
-.replace(/ĉ/g, "չ")
-.replace(/d/g, "դ")
-.replace(/e/g, "ե")
-.replace(/f/g, "ֆ")
-.replace(/g/g, "գ")
-.replace(/ĝ/g, "ղ")
-.replace(/h/g, "հ")
-.replace(/ĥ/g, "խ")
-.replace(/i/g, "ի")
-.replace(/j/g, "յ")
-.replace(/ĵ/g, "ջ")
-.replace(/k/g, "կ")
-.replace(/l/g, "լ")
-.replace(/m/g, "մ")
-.replace(/n/g, "ն")
-.replace(/o/g, "ո")
-.replace(/p/g, "պ")
-.replace(/r/g, "ր")
-.replace(/s/g, "ս")
-.replace(/ŝ/g, "շ")
-.replace(/t/g, "տ")
-.replace(/u/g, "ու")
-.replace(/ŭ/g, "վ")
-.replace(/v/g, "վ")
-.replace(/z/g, "զ");
-
-
+	.replace(/a/g, "ա")
+	.replace(/b/g, "բ")
+	.replace(/c/g, "ց")
+	.replace(/ĉ/g, "չ")
+	.replace(/d/g, "դ")
+	.replace(/e/g, "ե")
+	.replace(/f/g, "ֆ")
+	.replace(/g/g, "գ")
+	.replace(/ĝ/g, "ղ")
+	.replace(/h/g, "հ")
+	.replace(/ĥ/g, "խ")
+	.replace(/i/g, "ի")
+	.replace(/j/g, "յ")
+	.replace(/ĵ/g, "ջ")
+	.replace(/k/g, "կ")
+	.replace(/l/g, "լ")
+	.replace(/m/g, "մ")
+	.replace(/n/g, "ն")
+	.replace(/o/g, "ո")
+	.replace(/p/g, "պ")
+	.replace(/r/g, "ր")
+	.replace(/s/g, "ս")
+	.replace(/ŝ/g, "շ")
+	.replace(/t/g, "տ")
+	.replace(/u/g, "ու")
+	.replace(/ŭ/g, "վ")
+	.replace(/v/g, "վ")
+	.replace(/z/g, "զ");
     return resultat;
 }
+
 function transcrireCirilaLitero(texte) {
     var resultat = texte
         .replace(/A/g, "А")
@@ -253,38 +250,38 @@ function transcrireCirilaLitero(texte) {
         .replace(/Ŭ/g, "Ў")
         .replace(/V/g, "В")
         .replace(/Z/g, "З")
-		.replace(/а/g, "А")
-.replace(/a/g, "а")
-.replace(/b/g, "б")
-.replace(/c/g, "ц")
-.replace(/ĉ/g, "ч")
-.replace(/d/g, "д")
-.replace(/e/g, "э")
-.replace(/f/g, "ф")
-.replace(/g/g, "г")
-.replace(/ĝ/g, "ґ")
-.replace(/h/g, "х")
-.replace(/ĥ/g, "ћ")
-.replace(/i/g, "и")
-.replace(/j/g, "ј")
-.replace(/ĵ/g, "ж")
-.replace(/k/g, "к")
-.replace(/l/g, "л")
-.replace(/m/g, "м")
-.replace(/n/g, "н")
-.replace(/o/g, "о")
-.replace(/p/g, "п")
-.replace(/r/g, "р")
-.replace(/s/g, "с")
-.replace(/ŝ/g, "ш")
-.replace(/t/g, "т")
-.replace(/u/g, "у")
-.replace(/ŭ/g, "ў")
-.replace(/v/g, "в")
-.replace(/z/g, "з");
-
+	.replace(/а/g, "А")
+	.replace(/a/g, "а")
+	.replace(/b/g, "б")
+	.replace(/c/g, "ц")
+	.replace(/ĉ/g, "ч")
+	.replace(/d/g, "д")
+	.replace(/e/g, "э")
+	.replace(/f/g, "ф")
+	.replace(/g/g, "г")
+	.replace(/ĝ/g, "ґ")
+	.replace(/h/g, "х")
+	.replace(/ĥ/g, "ћ")
+	.replace(/i/g, "и")
+	.replace(/j/g, "ј")
+	.replace(/ĵ/g, "ж")
+	.replace(/k/g, "к")
+	.replace(/l/g, "л")
+	.replace(/m/g, "м")
+	.replace(/n/g, "н")
+	.replace(/o/g, "о")
+	.replace(/p/g, "п")
+	.replace(/r/g, "р")
+	.replace(/s/g, "с")
+	.replace(/ŝ/g, "ш")
+	.replace(/t/g, "т")
+	.replace(/u/g, "у")
+	.replace(/ŭ/g, "ў")
+	.replace(/v/g, "в")
+	.replace(/z/g, "з");
     return resultat;
 }
+
 function transcrireHebreaLitero(texte) {
     var resultat = texte
         .replace(/A/gi, "אַ")
@@ -315,9 +312,9 @@ function transcrireHebreaLitero(texte) {
         .replace(/Ŭ/gi, "וו")
         .replace(/V/gi, "ו")
         .replace(/Z/gi, "ז");
-
     return resultat;
 }
+
 function transcrireKoreaLitero(texte) {
     var resultat = texte
         .replace(/A/gi, "ㅏ")
@@ -348,9 +345,9 @@ function transcrireKoreaLitero(texte) {
         .replace(/Ŭ/gi, "ㅜ")
         .replace(/V/gi, "ㅸ")
         .replace(/Z/gi, "ㅿ");
-
     return resultat;
 }
+
 function transcrireGrekaLiteroModerna(texte) {
     var resultat = texte
         .replace(/A/g, "Α")
@@ -381,38 +378,37 @@ function transcrireGrekaLiteroModerna(texte) {
         .replace(/Ŭ/g, "ΟΥ")
         .replace(/V/g, "Β")
         .replace(/Z/g, "Ζ")
-		.replace(/a/g, "α")
-.replace(/b/g, "β")
-.replace(/c/g, "τσ")
-.replace(/ĉ/g, "τσ'")
-.replace(/d/g, "ντ")
-.replace(/e/g, "ε")
-.replace(/f/g, "φ")
-.replace(/g/g, "γκ")
-.replace(/ĝ/g, "τζ")
-.replace(/h/g, "χ")
-.replace(/ĥ/g, "χ'")
-.replace(/i/g, "ι")
-.replace(/j/g, "γι")
-.replace(/ĵ/g, "ζ")
-.replace(/k/g, "κ")
-.replace(/l/g, "λ")
-.replace(/m/g, "μ")
-.replace(/n/g, "ν")
-.replace(/o/g, "ο")
-.replace(/p/g, "π")
-.replace(/r/g, "ρ")
-.replace(/s/g, "σ")
-.replace(/ŝ/g, "σ'")
-.replace(/t/g, "τ")
-.replace(/u/g, "ου")
-.replace(/ŭ/g, "ου'")
-.replace(/v/g, "β")
-.replace(/z/g, "ζ");
-
-
+	.replace(/a/g, "α")
+	.replace(/b/g, "β")
+	.replace(/c/g, "τσ")
+	.replace(/ĉ/g, "τσ'")
+	.replace(/d/g, "ντ")
+	.replace(/e/g, "ε")
+	.replace(/f/g, "φ")
+	.replace(/g/g, "γκ")
+	.replace(/ĝ/g, "τζ")
+	.replace(/h/g, "χ")
+	.replace(/ĥ/g, "χ'")
+	.replace(/i/g, "ι")
+	.replace(/j/g, "γι")
+	.replace(/ĵ/g, "ζ")
+	.replace(/k/g, "κ")
+	.replace(/l/g, "λ")
+	.replace(/m/g, "μ")
+	.replace(/n/g, "ν")
+	.replace(/o/g, "ο")
+	.replace(/p/g, "π")
+	.replace(/r/g, "ρ")
+	.replace(/s/g, "σ")
+	.replace(/ŝ/g, "σ'")
+	.replace(/t/g, "τ")
+	.replace(/u/g, "ου")
+	.replace(/ŭ/g, "ου'")
+	.replace(/v/g, "β")
+	.replace(/z/g, "ζ");
     return resultat;
 }
+
 function transcrireGrekaLiteroAntikva(texte) {
     var resultat = texte
         .replace(/A/g, "Α")
@@ -443,38 +439,37 @@ function transcrireGrekaLiteroAntikva(texte) {
         .replace(/Ŭ/g, "Υ")
         .replace(/V/g, "Β")
         .replace(/Z/g, "Σ")
-		.replace(/a/g, "α")
-.replace(/b/g, "β")
-.replace(/c/g, "τσ")
-.replace(/ĉ/g, "τσ'")
-.replace(/d/g, "ντ")
-.replace(/e/g, "ε")
-.replace(/f/g, "φ")
-.replace(/g/g, "γκ")
-.replace(/ĝ/g, "τζ")
-.replace(/h/g, "χ")
-.replace(/ĥ/g, "χ'")
-.replace(/i/g, "ι")
-.replace(/j/g, "γι")
-.replace(/ĵ/g, "ζ")
-.replace(/k/g, "κ")
-.replace(/l/g, "λ")
-.replace(/m/g, "μ")
-.replace(/n/g, "ν")
-.replace(/o/g, "ο")
-.replace(/p/g, "π")
-.replace(/r/g, "ρ")
-.replace(/s/g, "σ")
-.replace(/ŝ/g, "σ'")
-.replace(/t/g, "τ")
-.replace(/u/g, "ου")
-.replace(/ŭ/g, "ου'")
-.replace(/v/g, "β")
-.replace(/z/g, "ζ");
-
-
+	.replace(/a/g, "α")
+	.replace(/b/g, "β")
+	.replace(/c/g, "τσ")
+	.replace(/ĉ/g, "τσ'")
+	.replace(/d/g, "ντ")
+	.replace(/e/g, "ε")
+	.replace(/f/g, "φ")
+	.replace(/g/g, "γκ")
+	.replace(/ĝ/g, "τζ")
+	.replace(/h/g, "χ")
+	.replace(/ĥ/g, "χ'")
+	.replace(/i/g, "ι")
+	.replace(/j/g, "γι")
+	.replace(/ĵ/g, "ζ")
+	.replace(/k/g, "κ")
+	.replace(/l/g, "λ")
+	.replace(/m/g, "μ")
+	.replace(/n/g, "ν")
+	.replace(/o/g, "ο")
+	.replace(/p/g, "π")
+	.replace(/r/g, "ρ")
+	.replace(/s/g, "σ")
+	.replace(/ŝ/g, "σ'")
+	.replace(/t/g, "τ")
+	.replace(/u/g, "ου")
+	.replace(/ŭ/g, "ου'")
+	.replace(/v/g, "β")
+	.replace(/z/g, "ζ");
     return resultat;
 }
+
 function transcrireBirman(texte) {
     var resultat = texte
         .replace(/a/gi, "အ")
@@ -505,11 +500,8 @@ function transcrireBirman(texte) {
         .replace(/ŭ/gi, "ဝ")
         .replace(/v/gi, "ဘ")
         .replace(/z/gi, "ဇ");
-
     return resultat;
 }
-
-
 
         // Ajoutez d'autres fonctions de transcription pour les autres langues
     </script>
